@@ -3,7 +3,7 @@ package com.utkubayrak.FoodOrdering.business.services;
 
 import com.utkubayrak.FoodOrdering.data.USER_ROLE;
 import com.utkubayrak.FoodOrdering.data.entities.UserEntity;
-import com.utkubayrak.FoodOrdering.data.repository.IUserRepository;
+import com.utkubayrak.FoodOrdering.data.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -20,7 +20,7 @@ import java.util.List;
 public class CustomerUserDetailsService implements UserDetailsService {
     
     @Autowired
-    private IUserRepository userRepository;
+    private UserRepository userRepository;
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         UserEntity user = userRepository.findByEmail(username);

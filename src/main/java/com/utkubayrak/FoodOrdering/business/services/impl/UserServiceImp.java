@@ -1,17 +1,17 @@
 package com.utkubayrak.FoodOrdering.business.services.impl;
 
-import com.utkubayrak.FoodOrdering.business.services.IUserService;
+import com.utkubayrak.FoodOrdering.business.services.UserService;
 import com.utkubayrak.FoodOrdering.config.JwtProvider;
 import com.utkubayrak.FoodOrdering.data.entities.UserEntity;
-import com.utkubayrak.FoodOrdering.data.repository.IUserRepository;
+import com.utkubayrak.FoodOrdering.data.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UserServiceImp implements IUserService {
+public class UserServiceImp implements UserService {
 
     @Autowired
-    private IUserRepository userRepository;
+    private UserRepository userRepository;
 
     @Autowired
     private JwtProvider jwtProvider;

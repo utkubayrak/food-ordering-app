@@ -1,6 +1,6 @@
 package com.utkubayrak.FoodOrdering.controller;
 
-import com.utkubayrak.FoodOrdering.business.services.IUserService;
+import com.utkubayrak.FoodOrdering.business.services.UserService;
 import com.utkubayrak.FoodOrdering.data.entities.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
 
     @Autowired
-    private IUserService userService;
+    private UserService userService;
 
     @GetMapping("/profile")
     public ResponseEntity<UserEntity> findUserByJwtToken(@RequestHeader("Authorization") String jwt) throws Exception {

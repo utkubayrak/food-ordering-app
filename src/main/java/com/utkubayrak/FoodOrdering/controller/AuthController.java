@@ -6,8 +6,8 @@ import com.utkubayrak.FoodOrdering.config.JwtProvider;
 import com.utkubayrak.FoodOrdering.data.USER_ROLE;
 import com.utkubayrak.FoodOrdering.data.entities.CartEntity;
 import com.utkubayrak.FoodOrdering.data.entities.UserEntity;
-import com.utkubayrak.FoodOrdering.data.repository.ICartRepository;
-import com.utkubayrak.FoodOrdering.data.repository.IUserRepository;
+import com.utkubayrak.FoodOrdering.data.repository.CartRepository;
+import com.utkubayrak.FoodOrdering.data.repository.UserRepository;
 import com.utkubayrak.FoodOrdering.payload.request.LoginRequest;
 import com.utkubayrak.FoodOrdering.payload.response.AuthResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,6 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -33,7 +32,7 @@ import java.util.Collection;
 public class AuthController {
 
     @Autowired
-    private IUserRepository userRepository;
+    private UserRepository userRepository;
     @Autowired
     private PasswordEncoder passwordEncoder;
     @Autowired
@@ -41,7 +40,7 @@ public class AuthController {
     @Autowired
     private CustomerUserDetailsService customerUserDetailsService;
     @Autowired
-    private ICartRepository cartRepository;
+    private CartRepository cartRepository;
 
 
     @PostMapping("/signup")

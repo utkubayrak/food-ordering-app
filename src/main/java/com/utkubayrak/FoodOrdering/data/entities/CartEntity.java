@@ -24,5 +24,5 @@ public class CartEntity { //bir alışveriş sepetini temsil eder
     private Long total;
 
     @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, orphanRemoval = true) //bir öğe yalnızca bir alışveriş sepetine ait olabilir.Alışveriş sepetinden kaldırılan öğelerin otomatik olarak veritabanından silinmesini sağlar.
-    private List<CartItemEntity> item = new ArrayList<>(); //Alışveriş sepetinde bulunan öğelerin listesi
+    private List<CartItemEntity> items = new ArrayList<>(); //Alışveriş sepetinde bulunan öğelerin listesi
 }
